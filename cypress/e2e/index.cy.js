@@ -1,16 +1,16 @@
 /// <reference types="cypress" />
 
-context('first scenario', () => {
+context('index', () => {
 
     beforeEach(() => {
-        cy.visit('../../src/index.html')
+        cy.visit('../../src/caesar/index.html')
     })
 
     it('displays Uftu for Test with key = 1', () => {
-        cy.get('#cypher-key').type('1')
-        cy.get('#cypher-message').type('Test')
-        cy.get('#cypher-btn').click()
+        cy.dataCy('cypher-key').type('1')
+        cy.dataCy('cypher-message').type('Test')
+        cy.dataCy('cypher-btn').click()
 
-        cy.get('#result').should('have.text', 'Uftu')
+        cy.dataCy('result').should('have.text', 'Uftu')
     })
 })
