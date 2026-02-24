@@ -10,6 +10,7 @@ describe('lightbox', () => {
     it('should open lightbox, click on image (overlay)', () => {
         cy.dataCy('lightbox-overlay').click();
         cy.dataCy('lightbox').should('be.visible');
+        cy.dataCy('No')
     });
 
     // 2
